@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo - Invoice/Bill</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/vue-loaders.css" rel="stylesheet">
+
+    <link href="assets/css/global.css" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+
+<body>
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="#">
+            <img src="assets/favicon.ico" width="30" height="30" alt="">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <!-- <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li> -->
+            </ul>
+            <form class="form-inline my-2 my-lg-0 float-right">
+                <span v-if="login">{{welcomeText}}</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-primary my-2 my-sm-0" type="button" v-on:click="doLoginLogout()">{{loginLogoutText}}</button>
+            </form>
+        </div>
+    </nav>
+
+    <div id="app">
+        <div v-if="isLoading" class="loading-container">
+            <line-scale-pulse-out-rapid-loader color="#fff" size="50px"></line-scale-pulse-out-rapid-loader>
+        </div>
+
+        <div class="container-fluid" v-if="!isLoading">
+
+            <br />
+
+            <div class="row">
+                <div class="col-md-11">
+                    <!--  <div class="alert alert-primary" role="alert">
+                        {{message}}
+
+                        <span data-toggle="tooltip" data-placement="top" title="This page is built with vuejs"><i class="fa fa-info-circle"
+                                aria-hidden="true"></i></span>
+
+                    </div>-->
+                </div>
+                <div class="col-md-1 offset-md-12">
+                    <button class="btn btn-dark float-right" v-on:click="preFillForm()">Sample Invoice</button>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-12">
+                    <label>Recipient Address</label>
+
+                    <input ref="autocomplete" placeholder="Type an address..." class="form-control" onfocus="value = ''" type="text" v-model="bill.site" />
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Biller Type</label>
+                    <select class="custom-select" v-model="bill.billerType" v-bind:class="{ 'input-error': bill.hasBillerTypeError }" v-on:change="validateBillerType()">
+                        <option disabled value="">Please select one</option>
+                        <option v-for="bt in billerTypes" v-bind:value="bt.value">
+                            {{ bt.value }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <br />
+
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Supplier/Distributor</label>
+
+                    <input type="text" id="supplier" name="supplier" class="form-control" v-model="bill.supplier" v-bind:class="{ 'input-error': bill.hasSupplierError }" v-on:change="validateBillSupplier()" />
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Customer</label>
+
+                    <input type="text" id="buyer" name="buyer" class="form-control" v-model="bill.buyer" v-bind:class="{ 'input-error': bill.hasBuyerError }" v-on:change="validateBillBuyer()" />
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Account Number</label>
+                    <input type="text" id="accountNumber" name="accountNumber" class="form-control" v-model="bill.accountNumber" />
+                </div>
+                <div class="col-3">
+                    <label>Invoice Number</label>
+                    <input type="text" id="invoiceNumber" name="invoiceNumber" class="form-control" v-model="bill.invoiceNumber" />
+                </div>
+                <div class="col-3">
+
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Issue Date </label>
+                    <vuejs-datepicker v-model="bill.issueDate" name="issueDate" bootstrap-styling="true" calendar-button="true" calendar-button-icon="fa fa-calendar" placeholder="dd MMM yyyy" :format="customShortDateFormatter">
+                    </vuejs-datepicker>
+                </div>
+                <div class="col-3">
+                    <label>Due Date</label>
+                    <vuejs-datepicker v-model="bill.dueDate" name="dueDate" bootstrap-styling="true" calendar-button="true" calendar-button-icon="fa fa-calendar" placeholder="dd MMM yyyy" :format="customShortDateFormatter">
+                    </vuejs-datepicker>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Start Date</label>
+                    <vuejs-datepicker v-model="bill.startDate" name="startDate" bootstrap-styling="true" calendar-button="true" calendar-button-icon="fa fa-calendar" placeholder="dd MMM yyyy" :format="customShortDateFormatter">
+                    </vuejs-datepicker>
+                </div>
+                <div class="col-3">
+                    <label>End Date</label>
+                    <vuejs-datepicker v-model="bill.endDate" name="endDate" bootstrap-styling="true" calendar-button="true" calendar-button-icon="fa fa-calendar" placeholder="dd MMM yyyy" :format="customShortDateFormatter">
+                    </vuejs-datepicker>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-12 table-responsive">
+                    <label>Item(s)</label>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Item Name</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(m, index) in bill.metadata" :key="index">
+                                <td>
+                                    <span v-on:click="addItem(m)" v-if="!m.mandatory">
+                                        <i class="fa fa-plus"></i>
+                                    </span>
+                                    <span v-on:click="removeItem(index)" v-if="index > 0 && !m.mandatory">
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                </td>
+                                <td>
+                                    <vuejs-datepicker v-model="m.startDate" name="startDate" bootstrap-styling="true" calendar-button="true" calendar-button-icon="fa fa-calendar" placeholder="dd MMM yyyy" :format="customShortDateFormatter">
+                                    </vuejs-datepicker>
+                                </td>
+                                <td>
+                                    <vuejs-datepicker v-model="m.endDate" name="endDate" bootstrap-styling="true" calendar-button="true" calendar-button-icon="fa fa-calendar" placeholder="dd MMM yyyy" :format="customShortDateFormatter">
+                                    </vuejs-datepicker>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" v-model="m.name" :disabled="m.mandatory" />
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" v-model="m.product" :disabled="m.mandatory" />
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" v-model="m.quantity" :disabled="m.mandatory" v-on:change="autoCalculate(m)" v-on:keyup="autoCalculate(m)" v-on:keypress='onlyForCurrency($event, m.quantity)' />
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" v-model="m.price" :disabled="m.mandatory" v-on:change="autoCalculate(m)" v-on:keyup="autoCalculate(m)" v-on:keypress='onlyForCurrency($event, m.price)' />
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" v-model="m.total" v-on:keypress='onlyForCurrency($event, m.total)' />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-9"></div>
+                <div class="col-3">
+                    <button type="button" class="btn btn-dark float-right" v-on:click="submitBillForm()">Submit</button>
+                </div>
+            </div>
+
+            <br /><br />
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="alert alert-dark" role="alert">
+                        <span>Site: {{ bill.site }}</span>
+                        <br />
+                        <span>Biller Type: {{ bill.billerType }}</span>
+                        <br />
+                        <span>Retailer: {{ bill.retailer }}</span>
+                        <br />
+                        <span>Buyer: {{ bill.buyer }}</span>
+                        <br />
+                        <span>Account Number: {{ bill.accountNumber }}</span>
+                        <br />
+                        <span>Invoice Number: {{ bill.invoiceNumber }}</span>
+                        <br />
+                        <span>Issue Date: {{ bill.issueDate | formatShortDate }}</span>
+                        <br />
+                        <span>Due Date: {{ bill.dueDate | formatShortDate }}</span>
+                        <br />
+                        <span>Start Date: {{ bill.startDate | formatShortDate }}</span>
+                        <br />
+                        <span>End Date: {{ bill.endDate | formatShortDate }}</span>
+                        <br />
+                        <span>Item(s): {{ bill.metadata | formatMetadata }}</span>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id="submit-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">JSON results</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                        <button type="button" class="btn btn-success" v-on:click="exportToPdf()" data-toggle="tooltip" data-placement="top" title="Export to PDF">
+                            <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/x-template" id="bill-input-template">
+
+    </script>
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDg8VvR0O4iuyKOkwTuZeOAe-z60nZO0U&libraries=places"></script> -->
+
+    <script src="assets/js/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js" integrity="sha512-ubuT8Z88WxezgSqf3RLuNi5lmjstiJcyezx34yIU2gAHonIi27Na7atqzUZCOoY4CExaoFumzOsFQ2Ch+I/HCw==" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <script src="assets/js/lodash.min.js"></script>
+    <script src="assets/js/jspdf.min.js"></script>
+    <script src="assets/js/jspdf.plugin.autotable.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js" integrity="sha512-BKbSR+cfyxLdMAsE0naLReFSLg8/pjbgfxHh/k/kUC82Hy7r6HtR5hLhobaln2gcTvzkyyehrdREdjpsQwy2Jw==" crossorigin="anonymous"></script>
+    <script src="assets/js/vuejs-datepicker.min.js"></script>
+    <script src="assets/js/vue-loaders.umd.js"></script>
+
+    <script src="assets/js/index.vue.js"></script>
+</body>
+
+</html>

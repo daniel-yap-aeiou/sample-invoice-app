@@ -1,0 +1,66 @@
+[v-cloak] {
+    display: none;
+}
+
+.loading-container {
+    height: 2000px;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #2f619c;
+}
+
+.input-error {
+    border: solid 1px rgb(0, 89, 255) !important;
+}
+
+.fa-plus {
+    color: green !important;
+    cursor: pointer;
+}
+
+.fa-minus {
+    color: #343a40 !important;
+    cursor: pointer;
+}
+
+.ib {
+    display: inline-block !important;
+}
+
+.search-location {
+    display: block;
+    width: 60vw;
+    margin: 0 auto;
+    margin-top: 5vw;
+    font-size: 20px;
+    font-weight: 400;
+    outline: none;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+div.popover-container>input {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.tooltip {
+    z-index: 999999 !important;
+}
