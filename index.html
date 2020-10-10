@@ -56,7 +56,7 @@
             <br />
 
             <div class="row">
-                <div class="col-md-11">
+                <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
                     <!--  <div class="alert alert-primary" role="alert">
                         {{message}}
 
@@ -65,14 +65,14 @@
 
                     </div>-->
                 </div>
-                <div class="col-md-1 offset-md-12">
+                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 offset-xs-12 offset-sm-12 offset-md-12 offset-lg-12">
                     <button class="btn btn-dark float-right" v-on:click="preFillForm()">Sample Invoice</button>
                 </div>
             </div>
 
             <div class="row">
 
-                <div class="col-12">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <label>Recipient Address</label>
 
                     <input ref="autocomplete" placeholder="Type an address..." class="form-control" onfocus="value = ''" type="text" v-model="bill.site" />
@@ -82,7 +82,7 @@
             <br />
 
             <div class="row">
-                <div class="col-3">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     <label>Biller Type</label>
                     <select class="custom-select" v-model="bill.billerType" v-bind:class="{ 'input-error': bill.hasBillerTypeError }" v-on:change="validateBillerType()">
                         <option disabled value="">Please select one</option>
@@ -97,7 +97,7 @@
 
 
             <div class="row">
-                <div class="col-3">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     <label>Supplier/Distributor</label>
 
                     <input type="text" id="supplier" name="supplier" class="form-control" v-model="bill.supplier" v-bind:class="{ 'input-error': bill.hasSupplierError }" v-on:change="validateBillSupplier()" />
@@ -107,7 +107,7 @@
             <br />
 
             <div class="row">
-                <div class="col-3">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     <label>Customer</label>
 
                     <input type="text" id="buyer" name="buyer" class="form-control" v-model="bill.buyer" v-bind:class="{ 'input-error': bill.hasBuyerError }" v-on:change="validateBillBuyer()" />
@@ -117,15 +117,15 @@
             <br />
 
             <div class="row">
-                <div class="col-3">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     <label>Account Number</label>
                     <input type="text" id="accountNumber" name="accountNumber" class="form-control" v-model="bill.accountNumber" />
                 </div>
-                <div class="col-3">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     <label>Invoice Number</label>
                     <input type="text" id="invoiceNumber" name="invoiceNumber" class="form-control" v-model="bill.invoiceNumber" />
                 </div>
-                <div class="col-3">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 
                 </div>
             </div>
@@ -133,12 +133,12 @@
             <br />
 
             <div class="row">
-                <div class="col-3">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     <label>Issue Date </label>
                     <vuejs-datepicker v-model="bill.issueDate" name="issueDate" bootstrap-styling="true" calendar-button="true" calendar-button-icon="fa fa-calendar" placeholder="dd MMM yyyy" :format="customShortDateFormatter">
                     </vuejs-datepicker>
                 </div>
-                <div class="col-3">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     <label>Due Date</label>
                     <vuejs-datepicker v-model="bill.dueDate" name="dueDate" bootstrap-styling="true" calendar-button="true" calendar-button-icon="fa fa-calendar" placeholder="dd MMM yyyy" :format="customShortDateFormatter">
                     </vuejs-datepicker>
@@ -148,12 +148,12 @@
             <br />
 
             <div class="row">
-                <div class="col-3">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     <label>Start Date</label>
                     <vuejs-datepicker v-model="bill.startDate" name="startDate" bootstrap-styling="true" calendar-button="true" calendar-button-icon="fa fa-calendar" placeholder="dd MMM yyyy" :format="customShortDateFormatter">
                     </vuejs-datepicker>
                 </div>
-                <div class="col-3">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     <label>End Date</label>
                     <vuejs-datepicker v-model="bill.endDate" name="endDate" bootstrap-styling="true" calendar-button="true" calendar-button-icon="fa fa-calendar" placeholder="dd MMM yyyy" :format="customShortDateFormatter">
                     </vuejs-datepicker>
@@ -163,7 +163,7 @@
             <br />
 
             <div class="row">
-                <div class="col-12 table-responsive">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 table-responsive">
                     <label>Item(s)</label>
 
                     <table class="table table-striped">
