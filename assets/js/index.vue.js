@@ -479,15 +479,15 @@ var app = new Vue({
 
             doc.text(20, 100, 'Issue Date: ' + vm.bill.issueDate);
             doc.text(20, 110, 'Due Date: ' + vm.bill.dueDate);
-            doc.text(20, 120, 'Start Date: ' + vm.bill.startDate);
-            doc.text(20, 130, 'End Date: ' + vm.bill.endDate);
+            //doc.text(20, 120, 'Start Date: ' + vm.bill.startDate);
+            //doc.text(20, 130, 'End Date: ' + vm.bill.endDate);
             doc.text(20, 140, 'ABN: ' + vm.bill.abn);
 
             doc.addPage();
 
             var columns = [
-                { title: "Start Date", dataKey: "startDate" },
-                { title: "End Date", dataKey: "endDate" },
+                //{ title: "Start Date", dataKey: "startDate" },
+                //{ title: "End Date", dataKey: "endDate" },
                 { title: "Name", dataKey: "name" },
                 { title: "Product", dataKey: "product" },
                 { title: "Quantity", dataKey: "quantity" },
@@ -498,8 +498,8 @@ var app = new Vue({
 
             for (var i = 0; i < vm.bill.metadata.length; i++) {
                 rows.push({
-                    "startDate": vm.bill.metadata[i].startDate,
-                    "endDate": vm.bill.metadata[i].endDate,
+                    //"startDate": vm.bill.metadata[i].startDate,
+                    //"endDate": vm.bill.metadata[i].endDate,
                     "name": vm.bill.metadata[i].name,
                     "product": vm.bill.metadata[i].product,
                     "quantity": vm.bill.metadata[i].quantity,
