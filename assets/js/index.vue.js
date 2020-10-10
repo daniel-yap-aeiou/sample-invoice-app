@@ -2,13 +2,14 @@
 var billerTypes = [
     { key: '1', value: 'Supplier' },
     { key: '2', value: 'Distributor' },
-    { key: '3', value: 'Landlord' }
+    { key: '3', value: 'Landlord' },
+    { key: '4', value: 'Retail' },
 ];
 
 var suppliers = [
-    { key: '1', value: 'Supplier A' },
-    { key: '2', value: 'Supplier B' },
-    { key: '3', value: 'Supplier C' }
+    { key: '1', value: 'Retail A' },
+    { key: '2', value: 'Retail B' },
+    { key: '3', value: 'Retail C' }
 ];
 
 var sites = [
@@ -45,6 +46,7 @@ var billJson = {
     hasSiteError: false,
     buyer: '',
     hasBuyerError: false,
+    abn: '',
     issueDate: '',
     dueDate: '',
     startDate: '',
@@ -63,10 +65,40 @@ var billJson = {
             total: '',
         },
         {
+            mandatory: false,
+            startDate: '',
+            endDate: '',
+            name: '',
+            product: '',
+            quantity: '',
+            price: '',
+            total: '',
+        },
+        {
+            mandatory: false,
+            startDate: '',
+            endDate: '',
+            name: '',
+            product: '',
+            quantity: '',
+            price: '',
+            total: '',
+        },
+        {
             mandatory: true,
             startDate: '',
             endDate: '',
             name: 'TotalCharge',
+            product: '',
+            quantity: '',
+            price: '',
+            total: '',
+        },
+        {
+            mandatory: true,
+            startDate: '',
+            endDate: '',
+            name: 'Tax',
             product: '',
             quantity: '',
             price: '',
@@ -388,7 +420,7 @@ var app = new Vue({
             var dueDate = dd1 + ' ' + t3Month + ' ' + dd3;
 
             vm.bill.site = 'Cnr La Trobe St &, Swanston St, Melbourne VIC 3000';
-            vm.bill.billerType = billerTypes[0].value;
+            vm.bill.billerType = billerTypes[3].value;
             vm.bill.supplier = suppliers[0].value;
             vm.bill.buyer = buyers[0].value;
             vm.bill.accountNumber = 'Acc-0000000001';
@@ -397,19 +429,23 @@ var app = new Vue({
             vm.bill.dueDate = dueDate;
             vm.bill.startDate = from;
             vm.bill.endDate = to;
+            vm.bill.abn = "51 824 753 556";
 
             for (var i = 0; i < vm.bill.metadata.length; i++) {
                 vm.bill.metadata[i].startDate = from;
                 vm.bill.metadata[i].endDate = to;
 
                 if (!vm.bill.metadata[i].mandatory) {
-                    vm.bill.metadata[i].name = "Energy";
-                    vm.bill.metadata[i].product = "Peak";
+                    vm.bill.metadata[i].name = "Clothing";
+                    vm.bill.metadata[i].product = "T-Shirt (L size) - Color Purple";
                     vm.bill.metadata[i].quantity = 10;
                     vm.bill.metadata[i].price = 2.5;
                     vm.bill.metadata[i].total = vm.bill.metadata[i].quantity * vm.bill.metadata[i].price;
                 }
 
+                if (vm.bill.metadata[i].mandatory && vm.bill.metadata[i].name === "Tax") {
+                    vm.bill.metadata[i].total = 55;
+                }
             }
 
             vm.calulateTotalCharge();
@@ -432,7 +468,7 @@ var app = new Vue({
             doc.addImage(imgData, 'png', 20, 0, 20, 20);
 
             doc.setFontSize(10);
-            doc.text(20, 30, 'Recipient Address: ' + vm.bill.site);
+            doc.text(20, 30, 'Bill To: ' + vm.bill.site);
 
             doc.text(20, 40, 'Biller Type: ' + vm.bill.billerType);
             doc.text(20, 50, 'Supplier/Distributor: ' + vm.bill.supplier);
@@ -445,6 +481,7 @@ var app = new Vue({
             doc.text(20, 110, 'Due Date: ' + vm.bill.dueDate);
             doc.text(20, 120, 'Start Date: ' + vm.bill.startDate);
             doc.text(20, 130, 'End Date: ' + vm.bill.endDate);
+            doc.text(20, 140, 'ABN: ' + vm.bill.abn);
 
             doc.addPage();
 

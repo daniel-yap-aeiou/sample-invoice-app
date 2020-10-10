@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Demo - Invoice/Bill</title>
+    <title>Sample Invoice App</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -73,7 +73,7 @@
             <div class="row">
 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <label>Recipient Address</label>
+                    <label>Bill To</label>
 
                     <input ref="autocomplete" placeholder="Type an address..." class="form-control" onfocus="value = ''" type="text" v-model="bill.site" />
                 </div>
@@ -98,9 +98,19 @@
 
             <div class="row">
                 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                    <label>Supplier/Distributor</label>
+                    <label>Supplier/Distributor/Retail</label>
 
                     <input type="text" id="supplier" name="supplier" class="form-control" v-model="bill.supplier" v-bind:class="{ 'input-error': bill.hasSupplierError }" v-on:change="validateBillSupplier()" />
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <label>ABN</label>
+
+                    <input type="text" id="abn" name="abn" class="form-control" v-model="bill.abn" />
                 </div>
             </div>
 
