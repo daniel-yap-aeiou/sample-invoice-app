@@ -4,6 +4,7 @@ var billerTypes = [
     { key: '2', value: 'Distributor' },
     { key: '3', value: 'Landlord' },
     { key: '4', value: 'Retail' },
+    { key: '5', value: 'Contractor' },
 ];
 
 var suppliers = [
@@ -98,7 +99,7 @@ var billJson = {
             mandatory: true,
             startDate: '',
             endDate: '',
-            name: 'Tax',
+            name: 'GST',
             product: '',
             quantity: '',
             price: '',
@@ -443,7 +444,7 @@ var app = new Vue({
                     vm.bill.metadata[i].total = vm.bill.metadata[i].quantity * vm.bill.metadata[i].price;
                 }
 
-                if (vm.bill.metadata[i].mandatory && vm.bill.metadata[i].name === "Tax") {
+                if (vm.bill.metadata[i].mandatory && vm.bill.metadata[i].name === "GST") {
                     vm.bill.metadata[i].total = 55;
                 }
             }
@@ -468,7 +469,7 @@ var app = new Vue({
             doc.addImage(imgData, 'png', 20, 0, 20, 20);
 
             doc.setFontSize(10);
-            doc.text(20, 30, 'Bill To: ' + vm.bill.site);
+            doc.text(20, 30, 'Bill To Address: ' + vm.bill.site);
 
             doc.text(20, 40, 'Biller Type: ' + vm.bill.billerType);
             doc.text(20, 50, 'Supplier/Distributor: ' + vm.bill.supplier);
