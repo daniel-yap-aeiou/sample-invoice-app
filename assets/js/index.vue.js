@@ -85,6 +85,26 @@ var billJson = {
             price: '',
             total: '',
         },
+		{
+            mandatory: false,
+            startDate: '',
+            endDate: '',
+            name: '',
+            product: '',
+            quantity: '',
+            price: '',
+            total: '',
+        },
+		{
+            mandatory: false,
+            startDate: '',
+            endDate: '',
+            name: '',
+            product: '',
+            quantity: '',
+            price: '',
+            total: '',
+        },
         {
             mandatory: true,
             startDate: '',
@@ -432,13 +452,52 @@ var app = new Vue({
             vm.bill.endDate = to;
             vm.bill.abn = "51 824 753 556";
 
+			let color = "Black";
+			let size = "L";
+			let product = "";
+			let name = "Clothing";
             for (var i = 0; i < vm.bill.metadata.length; i++) {
                 vm.bill.metadata[i].startDate = from;
                 vm.bill.metadata[i].endDate = to;
 
+				if (i === 0)
+				{
+					color = "Pink";
+					size = "S";
+					product = "T-Shirt (" + size + " size) - Color " + color;
+					name = "Clothing";
+				} 
+				else if (i === 1)
+				{
+					color = "Orange"
+					size = "M";
+					product = "Rice (" + size + " size)";
+					name = "Food";
+				}
+				else if (i === 2)
+				{
+					color = "Orange"
+					size = "M";
+					product = "T-Shirt (" + size + " size) - Color " + color;
+					name = "Food";
+				}
+				else if (i === 3)
+				{
+					color = "Purple";
+					size = "S";
+					name = "Food";
+					product = "Noodles (" + size + " size)";
+				}
+				else {
+					color = "Purple";
+					size = "L";
+					name = "Beverages";
+					product = "Mineral Water (" + size + " size)";
+				}
+
                 if (!vm.bill.metadata[i].mandatory) {
-                    vm.bill.metadata[i].name = "Clothing";
-                    vm.bill.metadata[i].product = "T-Shirt (L size) - Color Purple";
+                    vm.bill.metadata[i].name = name;
+                    vm.bill.metadata[i].product = product;
                     vm.bill.metadata[i].quantity = 10;
                     vm.bill.metadata[i].price = 2.5;
                     vm.bill.metadata[i].total = vm.bill.metadata[i].quantity * vm.bill.metadata[i].price;
