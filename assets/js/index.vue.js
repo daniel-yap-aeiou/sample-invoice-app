@@ -594,10 +594,10 @@ var app = new Vue({
             doc.autoTable({
                 theme: 'grid',
                 headStyles: { fillColor: [10, 186, 181] }, // Tifanny blue
-                columnStyles: {},
+                columnStyles: {font: 'chinese-traditional'},
                 margin: { top: 15 },
                 body: rows,
-		columns: columns,
+				columns: columns,
             });
 
 
