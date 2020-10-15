@@ -65,9 +65,11 @@
                     </div>-->
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 offset-xs-10 offset-sm-10 offset-md-10 offset-lg-10">
-                    <button class="btn btn-primary float-right" v-on:click="toggleDirection()">Change Direction</button>
-					&nbsp;<br/><br/>
-					<button class="btn btn-dark float-right" v-on:click="preFillForm()">Sample Invoice</button>
+					<div class="float-right" style="display: inline-flex;">
+						<button class="btn btn-light" v-on:click="toggleDirection()">Change Direction</button>
+						&nbsp;<br/><br/>
+						<button class="btn btn-dark" v-on:click="preFillForm()">Sample Invoice</button>
+					</div>
                 </div>
             </div>
 

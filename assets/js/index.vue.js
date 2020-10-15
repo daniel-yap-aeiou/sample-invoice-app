@@ -522,10 +522,10 @@ var app = new Vue({
             //var doc = new jsPDF();
             var doc = window.jspdf.jsPDF();
 
-			doc.addFileToVFS("https://github.com/daniel-yap-aeiou/sample-invoice-app/blob/master/assets/fonts/chinese-traditional.TTF", window.chinesetraditional);
-			doc.addFont('https://github.com/daniel-yap-aeiou/sample-invoice-app/blob/master/assets/fonts/chinese-traditional.TTF', 'chinese-traditional', 'normal');
+			// doc.addFileToVFS("https://cors-anywhere.herokuapp.com/https://github.com/daniel-yap-aeiou/sample-invoice-app/blob/master/assets/fonts/chinese-traditional.TTF", window.chinesetraditional);
+			// doc.addFont('https://cors-anywhere.herokuapp.com/https://github.com/daniel-yap-aeiou/sample-invoice-app/blob/master/assets/fonts/chinese-traditional.TTF', 'chinese-traditional', 'normal');
 
-			doc.setFont('chinese-traditional', 'normal');
+			// doc.setFont('chinese-traditional', 'normal');
 
 			// var xhr = new XMLHttpRequest();
 			// //12f525c880a52f5a3d85c27ac71266a5.woff
@@ -594,7 +594,7 @@ var app = new Vue({
             doc.autoTable({
                 theme: 'grid',
                 headStyles: { fillColor: [10, 186, 181] }, // Tifanny blue
-                columnStyles: {font: 'chinese-traditional'},
+                //columnStyles: {font: 'chinese-traditional'},
                 margin: { top: 15 },
                 body: rows,
 				columns: columns,
