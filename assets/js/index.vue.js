@@ -522,8 +522,8 @@ var app = new Vue({
             //var doc = new jsPDF();
             var doc = window.jspdf.jsPDF();
 
-			doc.addFileToVFS("https://github.com/daniel-yap-aeiou/sample-invoice-app/blob/main/assets/fonts/chinese-traditional.TTF", window.chinesetraditional);
-			doc.addFont('https://github.com/daniel-yap-aeiou/sample-invoice-app/blob/main/assets/fonts/chinese-traditional.TTF', 'chinese-traditional', 'normal');
+			doc.addFileToVFS("https://github.com/daniel-yap-aeiou/sample-invoice-app/blob/master/assets/fonts/chinese-traditional.TTF", window.chinesetraditional);
+			doc.addFont('https://github.com/daniel-yap-aeiou/sample-invoice-app/blob/master/assets/fonts/chinese-traditional.TTF', 'chinese-traditional', 'normal');
 
 			doc.setFont('chinese-traditional', 'normal');
 
