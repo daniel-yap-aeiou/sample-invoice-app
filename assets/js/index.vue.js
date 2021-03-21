@@ -604,7 +604,8 @@ var app = new Vue({
             var date = moment(new Date()).format('DD-MMM-YYYY HH:mm:ss');
             var id = nav.$data.id && nav.$data.id.length > 0 ? "_" + nav.$data.id : "";
             var filename = "invoice_" + date + id + ".pdf";
-
+			//var filename = "invoice_" + date + "21" + ".pdf";
+            //var filename = "invoice_" + date + "24" + ".pdf";
             doc.save(filename);
         },
         getAddressData: function (addressData, placeResultData, id) {
