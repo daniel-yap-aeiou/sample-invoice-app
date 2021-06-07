@@ -34,7 +34,9 @@ $.ajax({
         });
     },
     error: function (xhr, ajaxOptions, t1) {
-   console.log(xhr);
+   console.log(xhr.status);
+   console.log(xhr.statusText);
+   console.log(xhr.responseText);
    console.log(ajaxOptions);
    console.log(t1);
  },
