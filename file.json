@@ -1,0 +1,539 @@
+{
+  "billerType": "Retail",
+  "hasBillerTypeError": false,
+  "supplier": "Retail A",
+  "hasSupplierError": false,
+  "site": "Cnr La Trobe St &, Swanston St, Melbourne VIC 3000",
+  "hasSiteError": false,
+  "buyer": "Customer A",
+  "hasBuyerError": false,
+  "abn": "51 824 753 556",
+  "issueDate": "31 Jul 2021",
+  "dueDate": "31 Aug 2021",
+  "startDate": "1 Jun 2021",
+  "endDate": "30 Jun 2021",
+  "accountNumber": "Acc-0000000001",
+  "invoiceNumber": "Inv-0000000001",
+  "metadata": [
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Clothing",
+      "product": "T-Shirt (S size) - Color Pink",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Food",
+      "product": "Rice (M size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Food",
+      "product": "T-Shirt (M size) - Color Orange",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Food",
+      "product": "Noodles (S size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": false,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "Beverages",
+      "product": "Mineral Water (L size)",
+      "quantity": 10,
+      "price": 2.5,
+      "total": 25
+    },
+    {
+      "mandatory": true,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "TotalCharge",
+      "product": "",
+      "quantity": "",
+      "price": "",
+      "total": 1225
+    },
+    {
+      "mandatory": true,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "GST",
+      "product": "",
+      "quantity": "",
+      "price": "",
+      "total": 55
+    },
+    {
+      "mandatory": true,
+      "startDate": "1 Jun 2021",
+      "endDate": "30 Jun 2021",
+      "name": "TotalAmountDue",
+      "product": "",
+      "quantity": "",
+      "price": "",
+      "total": 1225
+    }
+  ]
+}
