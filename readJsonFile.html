@@ -1,0 +1,53 @@
+<html>
+
+<body>
+
+<input type="file" value="" placeholder="file" id="jsonFile" name="jsonFile" />
+<button type="button">Submit</button>
+
+<script
+			  src="https://code.jquery.com/jquery-2.2.4.min.js"
+			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+  $('input[type=file]').change(function () {
+   console.log(this.files[0]);
+   console.log(this.files[0].name);
+
+   var t = "https://cors-anywhere.herokuapp.com/https://github.com/cid8809/sample-invoice-app/blob/main/file.json";
+
+
+$.ajax({
+    type: "json",
+    url: t,
+    headers: {
+        "X-Requested-With": "XMLHttpRequest",
+        "Access-Control-Allow-Origin": "*",
+    },
+    success: function(t1) {
+        $.each(t1, function(t2, field) {
+            console.log(field + ": " + t2);
+        });
+    },
+    error: function (xhr, ajaxOptions, t1) {
+   console.log(xhr);
+   console.log(ajaxOptions);
+   console.log(t1);
+ },
+
+});
+
+ });
+
+
+});
+
+</script>
+
+</body>
+
+</html>
